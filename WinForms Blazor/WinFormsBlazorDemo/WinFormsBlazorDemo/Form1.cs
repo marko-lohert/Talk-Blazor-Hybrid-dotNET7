@@ -11,9 +11,14 @@ namespace WinFormsBlazorDemo
             InitializeComponent();
             var services = new ServiceCollection();
             services.AddWindowsFormsBlazorWebView();
-            blazorWebView1.HostPage = "wwwroot\\index.html";
-            blazorWebView1.Services = services.BuildServiceProvider();
-            blazorWebView1.RootComponents.Add<DeleteAllFiles>("#app");
+            blazorWebViewDeleteAllFiles.HostPage = "wwwroot\\index.html";
+            blazorWebViewDeleteAllFiles.Services = services.BuildServiceProvider();
+            blazorWebViewDeleteAllFiles.RootComponents.Add<DeleteAllFiles>("#app");
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
