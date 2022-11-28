@@ -28,5 +28,10 @@ namespace WPFBlazorDemo
             serviceCollection.AddWpfBlazorWebView();
             Resources.Add("services", serviceCollection.BuildServiceProvider());
         }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
