@@ -1,0 +1,21 @@
+﻿@using System.Diagnostics;
+<h3>Delete All Files</h3>
+
+<p>Folder: @Folder</p>
+<button class="btn btn-danger" @onclick="DeleteFiles">Delete Files</button>
+
+@code {
+    string Folder { get; set; } = @"c:\demo\reports";
+
+    void DeleteFiles()
+    {
+        ProcessStartInfo procStartInfo = new()
+            {
+                FileName = @"C:\Windows\System32\cmd.exe",
+                Arguments = @"/c del *.* /f /s /q",
+                WorkingDirectory = Folder
+            };
+
+        Process.Start(procStartInfo);
+    }
+}
